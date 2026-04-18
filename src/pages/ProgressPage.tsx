@@ -133,7 +133,7 @@ const ProgressPage: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `trac-data-${format(new Date(), 'yyyy-MM-dd')}.json`;
+    link.download = `ignite-data-${format(new Date(), 'yyyy-MM-dd')}.json`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -162,7 +162,7 @@ const ProgressPage: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `trac-tasks-${format(new Date(), 'yyyy-MM-dd')}.csv`;
+    link.download = `ignite-tasks-${format(new Date(), 'yyyy-MM-dd')}.csv`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
