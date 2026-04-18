@@ -1,0 +1,128 @@
+.goal-card {
+  background: var(--trac-card);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.goal-card.completed {
+  border-color: var(--trac-star-2);
+  background: linear-gradient(to bottom right, var(--trac-card), rgba(88, 204, 2, 0.05));
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.goal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--trac-text);
+}
+
+.goal-icon {
+  color: var(--trac-star-3);
+  font-size: 20px;
+}
+
+.goal-deadline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--trac-text-soft);
+  background: rgba(0,0,0,0.05);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.goal-main {
+  margin-bottom: 16px;
+}
+
+.goal-target {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.goal-target .current {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--trac-primary);
+}
+
+.goal-target .separator {
+  color: var(--trac-text-soft);
+  font-size: 20px;
+}
+
+.goal-target .target {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--trac-text-soft);
+}
+
+.goal-progress-container {
+  height: 12px;
+  background: var(--trac-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.goal-progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--trac-primary), var(--trac-star-3));
+  border-radius: 6px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.goal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goal-reward {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--trac-text);
+}
+
+.claim-btn {
+  background: var(--trac-star-2);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-family: 'Fredoka', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #46a302;
+  transition: all 0.1s;
+}
+
+.claim-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #46a302;
+}
+
+.abandon-btn {
+  background: transparent;
+  color: var(--trac-text-soft);
+  border: none;
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+}

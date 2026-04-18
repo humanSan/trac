@@ -1,0 +1,235 @@
+.radial-stats-row.large {
+  display: flex;
+  justify-content: space-around;
+  padding: 32px 16px;
+  background: transparent;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  position: relative;
+  background-color: var(--trac-card);
+  border-radius: 20px;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.trend-pos-card {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.trend-pos {
+  position: absolute;
+  z-index: 10;
+}
+
+.trend-pos.radial {
+  top: -4px;
+  right: -4px;
+}
+
+.trend-icon {
+  font-size: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.trend-icon.up { 
+  color: #34c759; /* Vibrant Green */
+}
+.trend-icon.down { 
+  color: #ff3b30; /* Vibrant Red */
+}
+
+.trend-badge.perfect {
+  background: linear-gradient(135deg, #ffcc00, #ff9500);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  box-shadow: 0 2px 6px rgba(255, 149, 0, 0.4);
+  animation: pulse-fire 2s infinite;
+}
+
+@keyframes pulse-fire {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.radial-item-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.summary-icon.fire { color: #ff9500; font-size: 28px; }
+.summary-icon.trophy { color: #ffcc00; }
+.summary-icon.perfect { color: #007aff; }
+.summary-icon.power { color: #5856d6; }
+.summary-icon.done { color: #34c759; }
+
+.summary-value {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--trac-text);
+  margin-bottom: 4px;
+}
+
+.summary-label {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--trac-text-soft);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* No Goal Card */
+.no-goal-card {
+  margin: 16px;
+  padding: 24px;
+  background: var(--trac-card);
+  border-radius: 24px;
+  border: 2px dashed var(--trac-border);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.no-goal-card:active {
+  transform: scale(0.98);
+  background: rgba(0,0,0,0.02);
+}
+
+.no-goal-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: var(--trac-text);
+}
+
+.no-goal-content p {
+  margin: 0 0 16px 0;
+  color: var(--trac-text-soft);
+  font-size: 14px;
+}
+
+/* Stat Selector Grid in Modal */
+.stat-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.stat-opt {
+  background: var(--trac-bg);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.stat-opt.active {
+  border-color: var(--trac-primary);
+  background: rgba(var(--trac-primary-rgb), 0.1);
+}
+
+.stat-opt-icon {
+  font-size: 20px;
+}
+
+.stat-opt-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--trac-text-soft);
+}
+
+.stat-opt.active .stat-opt-label {
+  color: var(--trac-primary);
+}
+
+.number-input {
+  width: 100%;
+  background: var(--trac-bg);
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  color: var(--trac-text);
+}
+
+.section-title {
+  padding: 0 16px;
+  margin-bottom: 16px;
+  color: var(--trac-text);
+  font-family: 'Fredoka', sans-serif;
+}
+
+.streak-cards-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.streak-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--trac-card);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.streak-card.level-1 { border-left: 6px solid var(--trac-star-1); }
+.streak-card.level-2 { border-left: 6px solid var(--trac-star-2); }
+.streak-card.level-3 { border-left: 6px solid var(--trac-star-3); }
+
+.streak-card-info h3 {
+  margin: 0 0 4px 0;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 18px;
+  color: var(--trac-text);
+}
+
+.streak-card-info p {
+  margin: 0;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 13px;
+  color: var(--trac-text-soft);
+}

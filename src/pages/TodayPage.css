@@ -1,0 +1,26 @@
+.trac-page {
+  --background: var(--trac-bg);
+}
+
+.header-padding {
+  height: env(safe-area-inset-top, 44px);
+}
+
+.page-title {
+  color: var(--trac-text);
+  font-family: 'Fredoka', sans-serif;
+}
+
+.tasks-container {
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.trac-fab {
+  --background: var(--trac-primary);
+  --background-hover: var(--trac-primary);
+  --background-activated: var(--trac-primary);
+  --color: white;
+  box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4);
+}

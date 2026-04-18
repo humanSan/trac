@@ -1,0 +1,70 @@
+.task-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--trac-card);
+  border-bottom: 1px solid var(--trac-border);
+  position: relative;
+  touch-action: none; /* Important for dnd-kit on mobile */
+}
+
+.task-row:last-child {
+  border-bottom: none;
+}
+
+.task-row.dragging {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 10;
+  border-bottom: none;
+}
+
+.task-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 12px;
+  overflow: hidden;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 16px;
+  color: var(--trac-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.2s ease;
+}
+
+.habit-streak-tag {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--trac-primary);
+  background: rgba(255, 107, 107, 0.1);
+  padding: 2px 8px;
+  border-radius: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.task-text.completed {
+  color: var(--trac-text-soft);
+  text-decoration: line-through;
+}
+
+.task-drag-handle {
+  padding: 8px;
+  margin-right: -8px;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-drag-handle:active {
+  cursor: grabbing;
+}

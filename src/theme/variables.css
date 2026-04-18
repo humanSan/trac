@@ -1,0 +1,50 @@
+/* Ionic Variables and Custom Design System Properties */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Ionic Color Overrides */
+  --ion-color-primary: #FF6B6B;
+  --ion-color-primary-rgb: 255,107,107;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #e05e5e;
+  --ion-color-primary-tint: #ff7a7a;
+
+  --ion-font-family: 'Fredoka', sans-serif;
+
+  /* Custom Trac Color Tokens - Light */
+  --trac-primary: #FF6B6B;
+  --trac-star-1: #58CC02; /* Duolingo green */
+  --trac-star-2: #FFC800; /* Sunny gold */
+  --trac-star-3: #FF4B4B; /* Fire red */
+  --trac-habit: #A560FF;  /* Playful purple */
+  --trac-bg: #FFF8F0;     /* Warm cream */
+  --trac-card: #FFFFFF;
+  --trac-streak: #FFD700;
+  --trac-success: #4ADE80;
+  --trac-text: #2D2D3A;
+  --trac-text-soft: #8E8EA0;
+  --trac-border: #f0e6da;
+
+  /* Basic layout */
+  --ion-background-color: var(--trac-bg);
+  --ion-text-color: var(--trac-text);
+}
+
+.ion-palette-dark {
+  --trac-primary: #FF7B7B;
+  --trac-star-1: #6EE020;
+  --trac-star-2: #FFD630;
+  --trac-star-3: #FF5B5B;
+  --trac-habit: #B070FF;
+  --trac-bg: #222222;
+  --trac-card: #2D2D2D;
+  --trac-streak: #FFE040;
+  --trac-success: #5AEE90;
+  --trac-text: #F0F0F5;
+  --trac-text-soft: #A0A0A0;
+  --trac-border: #3A3A3A;
+
+  --ion-background-color: var(--trac-bg);
+  --ion-text-color: var(--trac-text);
+}

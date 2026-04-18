@@ -1,0 +1,7 @@
+{
+  "name": "trac-temp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

@@ -1,0 +1,110 @@
+.date-selector-wrapper {
+  background-color: var(--trac-card);
+}
+
+.date-selector-month {
+  padding: 12px 16px 4px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--trac-text);
+  text-transform: capitalize;
+}
+
+.date-selector-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--trac-border);
+  background-color: var(--trac-card);
+  scroll-snap-type: x mandatory; /* Enable snapping */
+}
+
+.date-selector-track {
+  display: flex;
+  flex-direction: row;
+}
+
+.date-selector-week {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%; /* Each week takes full width */
+  width: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+  scroll-snap-align: start; /* Snap point */
+}
+
+.date-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Equal width for all 7 items */
+  height: 72px;
+  border-radius: 16px;
+  background-color: var(--trac-bg);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  margin: 0 4px;
+}
+
+.date-item.today {
+  border-color: var(--trac-primary);
+}
+
+.date-item.selected {
+  background-color: var(--trac-primary);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+.date-item.selected .date-day-name,
+.date-item.selected .date-day-num {
+  color: white;
+}
+
+.date-day-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--trac-text-soft);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.date-day-num {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--trac-text);
+  margin-bottom: 4px;
+}
+
+.date-stars {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+
+.star-icon {
+  font-size: 10px;
+}
+
+.star-icon.level-1 { color: var(--trac-star-1); }
+.star-icon.level-2 { color: var(--trac-star-2); }
+.star-icon.level-3 { color: var(--trac-star-3); }
+
+.date-item.selected .star-icon {
+  color: white; /* Make stars white when selected for contrast */
+}
+
+.star-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--trac-border);
+  margin: 3px;
+}

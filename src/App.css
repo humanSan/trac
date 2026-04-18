@@ -1,0 +1,84 @@
+.custom-tab-bar {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  min-width: 200px;
+  border-radius: 24px;
+  padding: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background-color: var(--trac-card);
+  border: none;
+  height: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-tab-bar {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.custom-tab-button {
+  background: transparent;
+  padding: 0 16px;
+  border-radius: 16px;
+  margin: 0 4px;
+  overflow: visible;
+}
+
+/* Base styles for the indicator container */
+.tab-indicator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  border-radius: 16px;
+  padding: 0 16px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background-color: transparent;
+}
+
+/* Hide active icon by default */
+.tab-icon-active {
+  display: none;
+  font-size: 24px;
+  color: white;
+}
+
+/* Show inactive icon by default */
+.tab-icon-inactive {
+  display: block;
+  font-size: 24px;
+  color: var(--trac-text-soft);
+  transition: all 0.3s ease;
+}
+
+.tab-label {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: none; /* Hide label by default */
+  color: white;
+}
+
+/* Selected state styling */
+.custom-tab-button[aria-selected="true"] .tab-indicator {
+  background-color: var(--trac-primary);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  transform: scale(1.05);
+}
+
+.custom-tab-button[aria-selected="true"] .tab-icon-active {
+  display: block;
+}
+
+.custom-tab-button[aria-selected="true"] .tab-icon-inactive {
+  display: none;
+}
+
+.custom-tab-button[aria-selected="true"] .tab-label {
+  display: block;
+}

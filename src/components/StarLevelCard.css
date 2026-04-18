@@ -1,0 +1,118 @@
+.star-card-container {
+  margin-bottom: 24px;
+  border-radius: 20px;
+  background-color: var(--trac-card);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden; /* To contain the border radius */
+}
+
+@media (prefers-color-scheme: dark) {
+  .star-card-container {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.star-card-container.drag-over {
+  box-shadow: 0 0 0 2px var(--trac-primary);
+  transform: scale(1.01);
+}
+
+.star-card-header {
+  position: relative;
+  padding: 16px 20px;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent; /* Match the rest of the app */
+}
+
+/* Removed background tints for headers */
+
+.star-card-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 1;
+}
+
+/* Solid colors for progress bar fill */
+.star-card-header.level-1 .star-card-progress { background-color: var(--trac-star-1); }
+.star-card-header.level-2 .star-card-progress { background-color: var(--trac-star-2); }
+.star-card-header.level-3 .star-card-progress { background-color: var(--trac-star-3); }
+.star-card-header.habit .star-card-progress { background-color: var(--trac-habit); }
+
+.star-card-header-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.star-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--trac-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Text color needs to contrast with progress bar when it fills */
+/* We can use CSS mix-blend-mode or just make it dark enough. */
+/* Mix blend mode works well on light/dark mode */
+.star-card-title, .star-card-stats {
+  mix-blend-mode: difference;
+  color: white; /* Inversely colored */
+}
+
+/* Fallback if mix-blend-mode is tricky: */
+/* We will just use normal text color since the progress bar is under it, 
+   but we should ensure the progress bar colors are slightly lighter, 
+   OR we just let the progress bar be semi-transparent! */
+.star-card-progress {
+  opacity: 0.4; /* Slightly more visible since background tints are gone */
+}
+
+/* Restore normal text colors if using opacity approach */
+.star-card-title { color: var(--trac-text); mix-blend-mode: normal; }
+.star-card-stats { color: var(--trac-text); mix-blend-mode: normal; }
+
+.star-emojis {
+  font-size: 16px;
+}
+
+.star-card-stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.fraction {
+  font-size: 16px;
+  background: rgba(0,0,0,0.05);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .fraction { background: rgba(255,255,255,0.1); }
+}
+
+.star-card-body {
+  background-color: var(--trac-card);
+  min-height: 20px; /* Target for drag-and-drop even if empty */
+}
+
+.empty-state {
+  padding: 24px;
+  text-align: center;
+  color: var(--trac-text-soft);
+  font-size: 14px;
+  font-style: italic;
+}

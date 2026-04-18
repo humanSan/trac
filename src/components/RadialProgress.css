@@ -1,0 +1,37 @@
+.radial-progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.radial-progress-container:active {
+  transform: scale(0.95);
+}
+
+.radial-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.radial-percent {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--trac-text);
+}
+
+.radial-label {
+  margin-top: -4px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--trac-text-soft);
+}
